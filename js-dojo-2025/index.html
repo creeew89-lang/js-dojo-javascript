@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault – Zero-Dependency Password Manager</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Vault</h1>
+    <div id="error"></div>
+
+    <section id="unlock">
+<input id="master" type="password" placeholder="Master Password" autocomplete="off" />
+<button onclick="unlock()"> Unlock </button>
+    </section>
+
+<section id="vault" style="display:none;">
+    <button onclick="lock()"> Lock </button>
+    <hr />
+    <h2>Add Entry</h2>
+    <input id="title" placeholder="Title" />
+        <input id="user" placeholder="Username / Email" />
+            <input id="pass" type="password" placeholder="password />
+<button onclick="addEntry()">Save</button>
+<hr />
+    <h2>Entries</h2>
+    <div id="entries"></div>
+    </section>
+    <hr />
+    <input type="file" id="upload" accept=".json" onchange="uploadBackup(event)" />
+    </section>
+    
+    <script src="vault.js"></script>
+</style>
+
+</html>
